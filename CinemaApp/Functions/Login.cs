@@ -1,4 +1,5 @@
 ﻿using CinemaApp.CustomerModel;
+using CinemaApp.MovieModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace CinemaApp.Functions
 {
     public class Login
     {
-        public static CustomerDetails CheckLogin (string Username, string Password, List<CustomerDetails> Customers)
+        public static CustomerDetails CheckLogin (string Username, string Password, List<CustomerDetails> Customers,List<MovieSeatDetails> ListOfSeat)
         {
             var checkAcc = (from c in Customers
                          where c.Username == Username
@@ -28,7 +29,7 @@ namespace CinemaApp.Functions
                 {
                     Thread.Sleep(2000);
                     Console.Clear();
-                    SelectMovieScreen.SelectMovie();
+                    SelectMovieScreen.SelectMovie(ListOfSeat);
                 }
             }
             else

@@ -3,6 +3,7 @@ using CinemaApp.CustomerModel;
 using CinemaApp.Functions;
 using CinemaApp.MovieList;
 using CinemaApp.MovieModel;
+using CinemaApp.MovieTimeList;
 using ConsoleTables;
 using System;
 using System.Collections.Generic;
@@ -15,15 +16,13 @@ namespace CinemaApp
 {
     public class CinemaMainScreen
     {
-        public void CinemaTicketApp()
+        public void CinemaTicketApp(List<MovieSeatDetails> ListOfSeat)
         {
             CustomersList customers = new CustomersList();
             List<CustomerDetails> ListOfCustomer = customers.ListOfCustomer();
 
             MoviesList movies = new MoviesList();
             List<MovieDetails> ListOfMovie = movies.ListOfMovies();
-
-            RandomSeat.RandomSeatAvail();
 
             bool menu = true;
             while (menu)
@@ -52,7 +51,7 @@ namespace CinemaApp
 
                         Console.Write("\nPassword : ");
                         var password = Console.ReadLine();
-                        Login.CheckLogin(username, password, ListOfCustomer);
+                        Login.CheckLogin(username, password, ListOfCustomer, ListOfSeat);
                         break;
 
                     case "3":

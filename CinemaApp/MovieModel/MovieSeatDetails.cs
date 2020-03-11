@@ -14,7 +14,7 @@ namespace CinemaApp.MovieModel
 
         public string SeatNo { get; set; }
 
-        public Avail SeatAvail { get; set; }
+        public SAvail SeatAvail { get; set; }
 
         public int MovieTimeID { get; set; }
 
@@ -22,7 +22,7 @@ namespace CinemaApp.MovieModel
 
     }
 
-    public enum Avail
+    public enum SAvail
     {
         E,T
     }

@@ -12,7 +12,7 @@ namespace CinemaApp
 {
     public class SelectMovieTimeScreen
     {
-        public static void SelectDateTime(MovieDetails DataTakeOver)
+        public static void SelectDateTime(MovieDetails DataTakeOver, List<MovieSeatDetails> ListOfSeat)
         {
             MovieStartTime times = new MovieStartTime();
 
@@ -26,34 +26,22 @@ namespace CinemaApp
                 PrintDateTime(ListOfTimes);
                 Console.WriteLine();
                 Console.Write("Enter Id to choose the movie time : ");
-                var movieTime = int.Parse(Console.ReadLine());
+                var movieTime = Console.ReadLine();
 
                 var checkTimeID = (from c in ListOfTimes
-                                   where c.MovieTimeID == movieTime
+                                   where c.MovieTimeID.ToString() == movieTime
                                    select c).SingleOrDefault();
                 
                 if (checkTimeID != null)
                 {
-
+                    SelectMovieSeatScreen.SelectSeat(checkTimeID, ListOfSeat);
                 }
-                //if (movieTime == "201")
-                //{
-                //    //Selection201(ListOfRow1, ListOfRow2, ListOfRow3);
-                //}
-                //else if (movieTime == "202")
-                //{
-                //    //Selection202(_202ListOfRow1, _202ListOfRow2, _202ListOfRow3);
-                //}
-                //else if (movieTime == "203")
-                //{
-                //    //Selection203(_203ListOfRow1, _203ListOfRow2, _203ListOfRow3);
-                //}
                 else
                 {
                     Console.WriteLine("Invalid Option");
                     Thread.Sleep(1000);
                     Console.Clear();
-                    SelectMovieScreen.SelectMovie();
+                    SelectMovieScreen.SelectMovie(ListOfSeat);
                 }
             }
         }

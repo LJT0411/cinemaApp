@@ -13,7 +13,7 @@ namespace CinemaApp
 {
     public class SelectMovieScreen
     {
-        public static void SelectMovie()
+        public static void SelectMovie(List<MovieSeatDetails> ListOfSeat)
         {
             MoviesList movies = new MoviesList();
             List<MovieDetails> ListOfMovies = movies.ListOfMovies();
@@ -36,17 +36,17 @@ namespace CinemaApp
                         Console.WriteLine("Select a movie");
                         PrintScreen(ListOfMovies);
                         Console.Write("\nEnter movie id : ");
-                        var movieID = int.Parse(Console.ReadLine());
+                        var movieID = Console.ReadLine();
 
                         var CheckMID = (from c in ListOfMovies
-                                        where c.MovieID == movieID
+                                        where c.MovieID.ToString() == movieID
                                         select c).SingleOrDefault();
 
                         if (CheckMID != null)
                         {
                             Console.Clear();
                             menu = false;
-                            SelectMovieTimeScreen.SelectDateTime(CheckMID);
+                            SelectMovieTimeScreen.SelectDateTime(CheckMID,ListOfSeat);
                         }
                         else
                         {
@@ -61,7 +61,7 @@ namespace CinemaApp
                         Thread.Sleep(2000);
                         Console.Clear();
                         CinemaMainScreen logout = new CinemaMainScreen();
-                        logout.CinemaTicketApp();
+                        logout.CinemaTicketApp(ListOfSeat);
                         break;
 
                     default:

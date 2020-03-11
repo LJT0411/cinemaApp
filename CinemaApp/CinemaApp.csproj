@@ -52,7 +52,6 @@
     <Compile Include="CustomerModel\CustomerDetails.cs" />
     <Compile Include="Functions\DisplayOutput.cs" />
     <Compile Include="Functions\Login.cs" />
-    <Compile Include="Functions\RandomSeat.cs" />
     <Compile Include="MovieList\MoviesList.cs" />
     <Compile Include="MovieModel\MovieDetails.cs" />
     <Compile Include="MovieModel\MovieSeatDetails.cs" />
@@ -61,6 +60,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectMovieScreen.cs" />
+    <Compile Include="SelectMovieSeatScreen.cs" />
     <Compile Include="SelectMovieTimeScreen.cs" />
   </ItemGroup>
   <ItemGroup>
