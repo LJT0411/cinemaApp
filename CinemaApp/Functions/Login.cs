@@ -28,8 +28,7 @@ namespace CinemaApp.Functions
                 {
                     Thread.Sleep(2000);
                     Console.Clear();
-                    SelectMovieScreen AfterLogin = new SelectMovieScreen();
-                    AfterLogin.SelectMovie();
+                    SelectMovieScreen.SelectMovie();
                 }
             }
             else

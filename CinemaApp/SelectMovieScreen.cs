@@ -13,7 +13,7 @@ namespace CinemaApp
 {
     public class SelectMovieScreen
     {
-        public void SelectMovie()
+        public static void SelectMovie()
         {
             MoviesList movies = new MoviesList();
             List<MovieDetails> ListOfMovies = movies.ListOfMovies();
@@ -46,20 +46,8 @@ namespace CinemaApp
                         {
                             Console.Clear();
                             menu = false;
-
+                            SelectMovieTimeScreen.SelectDateTime(CheckMID);
                         }
-                        //if (movieID == "101")
-                        //{
-                        //    Console.Clear();
-                        //    menu = false;
-                        //    //DateTime.SelectDateATime();
-                        //}
-                        //else if (movieID == "102")
-                        //{
-                        //    Console.Clear();
-                        //    menu = false;
-                        //    //DateTime2.SelectDateATime();
-                        //}
                         else
                         {
                             Console.WriteLine("Invalid Option");

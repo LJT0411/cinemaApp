@@ -57,9 +57,11 @@
     <Compile Include="MovieModel\MovieDetails.cs" />
     <Compile Include="MovieModel\MovieSeatDetails.cs" />
     <Compile Include="MovieModel\MovieTimeDetails.cs" />
+    <Compile Include="MovieTimeList\MovieStartTime.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectMovieScreen.cs" />
+    <Compile Include="SelectMovieTimeScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
