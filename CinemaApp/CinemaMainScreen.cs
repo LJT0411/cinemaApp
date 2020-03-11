@@ -23,6 +23,8 @@ namespace CinemaApp
             MoviesList movies = new MoviesList();
             List<MovieDetails> ListOfMovie = movies.ListOfMovies();
 
+            RandomSeat.RandomSeatAvail();
+
             bool menu = true;
             while (menu)
             {

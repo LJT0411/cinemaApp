@@ -9,7 +9,7 @@ namespace CinemaApp.MovieTimeList
 {
     public class MovieStartTime
     {
-        public static List<MovieTimeDetails> ListOfTime()
+        public List<MovieTimeDetails> ListOfTime()
         {
             List<MovieTimeDetails> ListOfTime = new List<MovieTimeDetails>()
             {
