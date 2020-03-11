@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CinemaApp.CustomerModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,13 +10,16 @@ namespace CinemaApp.MovieModel
 {
     public class MovieDetails
     {
+        [Key]
         public int MovieID { get; set; }
 
         public string MovieTitle { get; set; }
 
-        public DateTime MovieTime { get; set; }
+        public string MovieReleaseTime { get; set; }
 
         public MAvail MovieAvailable { get; set; }
+
+        public virtual ICollection<MovieTimeDetails> MovieTimeDetails { get; set; }
     }
 
     public enum MAvail
