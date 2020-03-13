@@ -18,17 +18,19 @@ namespace CinemaApp
 
             List<MovieTimeDetails> ListOfTimes = times.ListOfTime();
 
+            var ListOfTimeID = ListOfTimes.Where(c => c.MovieID == DataTakeOver.MovieID).ToList();
+
             bool select = true;
             while (select)
             {
                 Console.WriteLine("Your movie selection: " + DataTakeOver.MovieTitle);
                 Console.WriteLine("Select date and time");
-                PrintDateTime(ListOfTimes);
+                PrintDateTime(ListOfTimeID);
                 Console.WriteLine();
                 Console.Write("Enter Id to choose the movie time : ");
                 var movieTime = Console.ReadLine();
 
-                var checkTimeID = (from c in ListOfTimes
+                var checkTimeID = (from c in ListOfTimeID
                                    where c.MovieTimeID.ToString() == movieTime
                                    select c).SingleOrDefault();
                 

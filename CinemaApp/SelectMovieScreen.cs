@@ -87,7 +87,5 @@ namespace CinemaApp
             }
             CinemaTable.Write();
         }
-
-
     }
 }
