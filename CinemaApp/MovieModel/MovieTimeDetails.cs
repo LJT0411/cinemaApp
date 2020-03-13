@@ -16,6 +16,8 @@ namespace CinemaApp.MovieModel
 
         public int MovieID { get; set; }
 
+        public int MovieHallID { get; set; }
+
         public virtual MovieDetails MovieDetails { get; set; }
 
         public ICollection<MovieSeatDetails> MovieSeatDetails { get; set; }

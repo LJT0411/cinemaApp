@@ -21,7 +21,23 @@ namespace CinemaApp
 
             for (int y = 0; y < ListOfTimes.Count; y++)
             {
-                for (int i = 1; i < 4; i++)
+                var checkHall = ListOfTimes.Where(c => c.MovieHallID == ListOfTimes[y].MovieHallID).SingleOrDefault();
+                int check = 0;
+                if (checkHall.MovieHallID == 301)
+                    check = 4;
+                if (checkHall.MovieHallID == 302)
+                    check = 5;
+                if (checkHall.MovieHallID == 303)
+                    check = 6;
+
+                if (checkHall.MovieHallID == 304)
+                    check = 4;
+                if (checkHall.MovieHallID == 305)
+                    check = 5;
+                if (checkHall.MovieHallID == 306)
+                    check = 6;
+
+                for (int i = 1; i < check; i++)
                 {
                     for (int x = 1; x < 11; x++)
                     {

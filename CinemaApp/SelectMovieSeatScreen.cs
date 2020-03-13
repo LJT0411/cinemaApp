@@ -72,17 +72,13 @@ namespace CinemaApp
             {
                 Console.Write(Seat.SeatNo + " " + Seat.SeatAvail + "\t");
                 if (Seat.SeatNo.EndsWith("1,10"))
-                {
                     Console.WriteLine("\n");
-                }
                 if (Seat.SeatNo.EndsWith("2,10"))
-                {
                     Console.WriteLine("\n");
-                }
                 if (Seat.SeatNo.EndsWith("3,10"))
-                {
                     Console.WriteLine("\n");
-                }
+                if (Seat.SeatNo.EndsWith("4,10"))
+                    Console.WriteLine("\n");
             }
         }
 
