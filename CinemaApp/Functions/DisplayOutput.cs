@@ -9,6 +9,7 @@ namespace CinemaApp.Functions
 {
     public class DisplayOutput
     {
+        // To Display the output from NowShowing to Now Showing
         public static string DisplayOP(MAvail mvail)
         {
             switch (mvail)

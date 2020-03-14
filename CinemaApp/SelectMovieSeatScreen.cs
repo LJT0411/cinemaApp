@@ -11,20 +11,25 @@ namespace CinemaApp
 {
     public class SelectMovieSeatScreen
     {
+        // MovieSeat is stored the movie time id that you entered just now
         public static void SelectSeat(MovieTimeDetails MovieSeat, List<MovieSeatDetails> ListOfSeat)
         {
             Console.Clear();
 
             Console.WriteLine("Cinema Hall Seatings");
+            // This will print the all seat that belong to the movie time id
             PrintSeat(MovieSeat,ListOfSeat);
 
             Console.Write("\n\nEnter a seat number (row,column). Example 1,2 : ");
             var seatNumber = Console.ReadLine();
 
+            // This linq used to check the movie time id is valid or not
+            // if it is valid, it will grab all the seats from this movie time id
             var checkSeat = (from c in ListOfSeat
                                where c.MovieTimeID == MovieSeat.MovieTimeID
                                select c).ToList();
 
+            // This linq used to check the seat number that you entered is valid or not
             var checkNumber = (from c in checkSeat
                                where c.SeatNo == seatNumber
                                select c).SingleOrDefault();

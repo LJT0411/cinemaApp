@@ -16,12 +16,15 @@ namespace CinemaApp
 {
     public class CinemaMainScreen
     {
+        // This parameter list data brought from program class
         public void CinemaTicketApp(List<MovieSeatDetails> ListOfSeat)
         {
             CustomersList customers = new CustomersList();
+            // This list is to get the stored user data from customers list
             List<CustomerDetails> ListOfCustomer = customers.ListOfCustomer();
 
             MoviesList movies = new MoviesList();
+            // This list is to get the stored movie data from movies list
             List<MovieDetails> ListOfMovie = movies.ListOfMovies();
 
             bool menu = true;
@@ -38,6 +41,7 @@ namespace CinemaApp
                 switch (option)
                 {
                     case "1":
+                        // Print the all cinema by using this method, ListOfMovie has the all movies stored inside.
                         PrintCinemaMovies(ListOfMovie);
                         Console.WriteLine("Login to buy a movie ticket of your favourite movie.");
                         Thread.Sleep(3000);
@@ -51,6 +55,8 @@ namespace CinemaApp
 
                         Console.Write("\nPassword : ");
                         var password = Console.ReadLine();
+                        // This method called from Functions folder, this method used to check the user valid or not
+                        // if valid, it will bring over the stored random seat to next class
                         Login.CheckLogin(username, password, ListOfCustomer, ListOfSeat);
                         break;
 
@@ -67,11 +73,12 @@ namespace CinemaApp
                 }
             }
         }
-
+        // This method parameter grab the all the movies from this list
         private static void PrintCinemaMovies(List<MovieDetails> Movies)
         {
             var CinemaTable = new ConsoleTable("Movie Title", "Release Date", "");
 
+            // Loop the list and print the movies
             foreach (var MovieTitle in Movies)
             {
                 CinemaTable.AddRow(MovieTitle.MovieTitle, MovieTitle.MovieReleaseTime, DisplayOutput.DisplayOP(MovieTitle.MovieAvailable));

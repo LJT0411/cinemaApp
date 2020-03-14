@@ -11,8 +11,11 @@ namespace CinemaApp.Functions
 {
     public class Login
     {
+        // This parameter grab from the CinemaMainScreen class what you typed, and do the checking
+        // it also grab the random seat to here
         public static CustomerDetails CheckLogin (string Username, string Password, List<CustomerDetails> Customers,List<MovieSeatDetails> ListOfSeat)
         {
+            // This linq is to check the username valid or not
             var checkAcc = (from c in Customers
                          where c.Username == Username
                          select c).SingleOrDefault();
@@ -29,6 +32,7 @@ namespace CinemaApp.Functions
                 {
                     Thread.Sleep(2000);
                     Console.Clear();
+                    // Bring random seat to next class
                     SelectMovieScreen.SelectMovie(ListOfSeat);
                 }
             }
