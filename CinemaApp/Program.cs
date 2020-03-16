@@ -13,7 +13,7 @@ namespace CinemaApp
         static void Main(string[] args)
         {
             CinemaMainScreen CinemaApp = new CinemaMainScreen();
-
+            ss
             MovieStartTime times = new MovieStartTime();
             // Open a list to get the stored data from the MovieStartTime
             List<MovieTimeDetails> ListOfTimes = times.ListOfTime();
