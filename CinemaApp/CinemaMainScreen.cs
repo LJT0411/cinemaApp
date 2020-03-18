@@ -81,7 +81,9 @@ namespace CinemaApp
             // Loop the list and print the movies
             foreach (var MovieTitle in Movies)
             {
-                CinemaTable.AddRow(MovieTitle.MovieTitle, MovieTitle.MovieReleaseTime, DisplayOutput.DisplayOP(MovieTitle.MovieAvailable));
+                CinemaTable.AddRow(MovieTitle.MovieTitle, 
+                                   $"{MovieTitle.MovieReleaseTime.DayOfWeek} {MovieTitle.MovieReleaseTime.ToString("dd MMMM yyyy")}",
+                                   DisplayOutput.DisplayOP(MovieTitle.MovieAvailable));
             }
             CinemaTable.Write();
         }

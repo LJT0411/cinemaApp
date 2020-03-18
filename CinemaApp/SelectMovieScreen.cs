@@ -90,7 +90,9 @@ namespace CinemaApp
 
             foreach (var movies in checkMovie)
             {
-                CinemaTable.AddRow(movies.MovieID, movies.MovieTitle, movies.MovieReleaseTime, DisplayOutput.DisplayOP(movies.MovieAvailable));
+                CinemaTable.AddRow(movies.MovieID, movies.MovieTitle, 
+                                   $"{movies.MovieReleaseTime.DayOfWeek}, {movies.MovieReleaseTime.ToString("dd MMMM yyyy")}",
+                                   DisplayOutput.DisplayOP(movies.MovieAvailable));
             }
             CinemaTable.Write();
         }
